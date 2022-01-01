@@ -26,11 +26,6 @@
         <textarea type="text" class="block px-4 form-control" rows="3" placeholder="Description" name="description"></textarea>
       </div>
 
-      <div class="block my-2">
-        <span class="logo block">Cinema</span>
-          <input type="text" class="block px-4 form-control"  value="Shiip Cinemas" name="cinema">
-      </div>
-
       <button class="btn form-control" type="submit">
         Submit
       </button>

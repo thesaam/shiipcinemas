@@ -18,7 +18,7 @@
     <div class=" py-2">
         @foreach ($shows as $show)
             <div class="mx-auto">
-                @if (isset(Auth::user()->name) && Auth::user()->name == $show->user_name)
+                @if (isset(Auth::user()->id) && Auth::user()->id == $show->user_id)
                 
                     <div class="float-end px-3 pt-2">
                         
@@ -43,14 +43,13 @@
                 <div class="text-center float-left">
                     <img src="{{ asset('images/' . $show->image_path) }}" alt="image" class="rounded">
                 </div>
-                <div class="d-flex flex-column px-3 text-wrap pt-5">
+                <div class="d-flex flex-column px-3 text-wrap justify-content-center">
                     <h4>
                         <a href="/shows/{{ $show->id }}">
                             {{ $show->name }}
                         </a>
                     </h4>
                     <p>{{ $show->description }}</p>
-                    <h6>{{ $show->cinema }}</h6>
                 </div>
             </div>
         @endforeach
