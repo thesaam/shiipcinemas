@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\RegisterController;
+use App\Providers\AppServiceProvider;
 
 /*
 |---------- ----------------------------------------------------------------
