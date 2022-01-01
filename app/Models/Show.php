@@ -11,7 +11,7 @@ class Show extends Model
 
     protected $primaryKey = 'id'; 
 
-    protected $fillable = ['name', 'description', 'cinema', 'user_id' ];
+    protected $fillable = ['name', 'description', 'user_id' ];
 
     public function showVenues()
     {

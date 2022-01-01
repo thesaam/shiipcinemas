@@ -44,7 +44,6 @@ class ShowController extends Controller
         $request->validate([
             'name'=> 'required',
             'description'=> 'required',
-            'cinema'=> 'required',
             'image' => 'required|mimes:jpg,png,jpeg|max:5048'
         ]);
 
@@ -56,7 +55,6 @@ class ShowController extends Controller
         $show = Show::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
-            'cinema' => $request->input('cinema'), 
             'image_path' => $newImageName,
             'user_id' => auth()->user()->id
         ]);
