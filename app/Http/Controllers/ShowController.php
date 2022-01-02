@@ -61,7 +61,6 @@ class ShowController extends Controller
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'image_path' => $newImageName,
-            'user_id'=> auth()->user()
         ]);
 
         return redirect('/shows');
