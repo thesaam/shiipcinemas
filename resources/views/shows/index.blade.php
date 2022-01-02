@@ -3,7 +3,7 @@
 @section('content')
 
 @if (Auth::user())
-    <div class="container m-4">
+    <div class="container m-2">
         <a href="shows/create" class="btn">
             Add a new movie &rarr;
         </a>
@@ -14,7 +14,7 @@
         </p>
 @endif
 
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-3">
     <div class=" py-2">
         @foreach ($shows as $show)
             <div class="mx-auto">

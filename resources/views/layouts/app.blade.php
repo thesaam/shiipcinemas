@@ -23,8 +23,8 @@
   <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container-fluid">
-        <div class="logo d-flex flex-column">
-            <div class="main-logo">
+        <div class="logo">
+            <div class="fw-bold">
                 <a class="navbar-brand logo px-3" href="{{ url('#') }}">Shiip Cinemas</a>
             </div>
             <div class="sub-logo">
@@ -48,13 +48,13 @@
               @guest
                   @if (Route::has('login'))
                       <li class="nav-item">
-                          <a class="nav-link btn btn-outline-success" href="{{ route('login') }}">{{ __('Admin') }}</a>
+                          <a class="btn btn-outline-success" href="{{ route('login') }}">{{ __('Admin') }}</a>
                       </li>
                   @endif
 
                   @if (Route::has('register'))
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ route('register') }}">{{ __('') }}</a>
+                          <a class="" href="{{ route('register') }}">{{ __('') }}</a>
                       </li>
                   @endif
               @else
