@@ -25,7 +25,7 @@ class VenueContoller extends Controller
      */
     public function create()
     {
-        return view('shows.create');
+        
     }
 
     /**
@@ -49,7 +49,9 @@ class VenueContoller extends Controller
      */
     public function show($id)
     {
-        //
+        $show = Show::find($id);
+
+        return view('shows.show')->with('show', $show);
     }
 
     /**

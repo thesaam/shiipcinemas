@@ -15,7 +15,7 @@
       @csrf
 
       <div class="block my-2">
-        <input type="file" class=" px-4 form-control" name="image">
+        <input type="file" name="image">
       </div>
 
       <div class="block my-2">
@@ -30,6 +30,7 @@
         Submit
       </button>
     </form>
+    
   </div>
 
   @if ($errors->any())

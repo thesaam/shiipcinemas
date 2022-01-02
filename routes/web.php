@@ -17,19 +17,8 @@ use App\Providers\AppServiceProvider;
 |
 */
 
+Route::resource('/', ShowController::class);  
 Route::resource('/shows', ShowController::class);  
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

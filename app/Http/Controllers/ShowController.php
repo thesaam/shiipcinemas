@@ -7,6 +7,12 @@ use App\Models\Show;
 
 class ShowController extends Controller
 {
+
+    public function __construct() 
+    {
+        $this->middleware('auth', ['except' => ('index')]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +22,7 @@ class ShowController extends Controller
 
         //Select * from shows
         $shows = Show::all();
-
+ 
         return view('shows.index', [
             'shows' => $shows
         ]);
@@ -51,11 +57,11 @@ class ShowController extends Controller
 
         $request->image->move(public_path('images'), $newImageName);
 
-
         $show = Show::create([
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'image_path' => $newImageName,
+            'user_id'=> auth()->user()->id
         ]);
 
         return redirect('/shows');
@@ -99,7 +105,7 @@ class ShowController extends Controller
 
         $show = Show::where('id', $id)->update([
             'name' => $request->input('name'),
-            'description' => $request->input('description')
+            'description' => $request->input('description'),
         ]);
 
         return redirect('/shows');

@@ -2,7 +2,12 @@
 
 @section('content')
   <div class="m-auto py-3">
-    <div class="text-center">
+
+    <div class="text-center py-2">
+      <img src="{{ asset('images/' . $show->image_path) }}" alt="image" class="rounded">
+    </div>
+
+    <div class="text-center mt-2">
       <h1 class="logo">
         {{ $show->name }}
       </h1>

@@ -11,7 +11,7 @@
   </div>
 
   <div class="d-flex justify-content-center px-5 text-wrap text-center">
-    <form action="/shows/{{ $show->id }}" method="POST">
+    <form action="/shows/{{ $show->id }}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PUT')
 

@@ -18,7 +18,7 @@
     <div class=" py-2">
         @foreach ($shows as $show)
             <div class="mx-auto">
-                @if (isset(Auth::user()->id) && Auth::user()->id == $show->user_id)
+                @if (Auth::user())
                 
                     <div class="float-end px-3 pt-2">
                         
@@ -52,6 +52,32 @@
                     <p>{{ $show->description }}</p>
                 </div>
             </div>
+            <ul>
+                <p class="logo px-3">VIEWING TIMES:</p>
+                  @forelse ($show->showVenues as $venue)
+                    <div class="d-flex">
+                        <div class="d-flex flex-column px-3">
+                            <div class="px-2">
+                                {{ $venue->show_venues }}
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column mx-3">
+                            <div class="px-2">
+                                @foreach ($show->show_times as $show_time)    
+                                    @if($venue->id == $show_time->show_venues_id)
+                                        {{ $show_time->time}}
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                    <p>
+                      <a href="/venues/{{ $show->id }}"> Add Show times </a>
+                    </p>
+                  @endforelse
+                </div> 
+              </ul>
         @endforeach
     </div>
 </div>
